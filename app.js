@@ -5,13 +5,13 @@ http.createServer(function(request, response){
 	var url = request.url;
 	switch(url) {
 		case '/':
-			getStaticFileContent(response, '/public/home.html', 'text/html');
+			getStaticFileContent(response, 'public/home.html', 'text/html');
 			break;
 		case '/about':
-			getStaticFileContent(response, '/public/about.html', 'text/html');
+			getStaticFileContent(response, 'public/about.html', 'text/html');
 			break;
 		case '/contact':
-			getStaticFileContent(response, '/public/contact.html', 'text/html');
+			getStaticFileContent(response, 'public/contact.html', 'text/html');
 			break;
 		default:
 			response.writeHead(404, {'Content-Type':'text/plain'});
