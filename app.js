@@ -1,25 +1,28 @@
 var http = require('http');
 var fs = require('fs');
 
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 8080;
+
 http.createServer(function(request, response){
 	var url = request.url;
 	switch(url) {
 		case '/':
-			getStaticFileContent(response, './public/home.html', 'text/html');
+			getStaticFileContent(response, 'home.html', 'text/html');
 			break;
 		case '/about':
-			getStaticFileContent(response, './public/about.html', 'text/html');
+			getStaticFileContent(response, 'about.html', 'text/html');
 			break;
 		case '/contact':
-			getStaticFileContent(response, './public/contact.html', 'text/html');
+			getStaticFileContent(response, 'contact.html', 'text/html');
 			break;
 		default:
 			response.writeHead(404, {'Content-Type':'text/plain'});
 			response.end('404 - Page not found.');
 
 	}
-}).listen(9099);
-console.log('server running at http://localhost:9099');
+}).listen(port);
 
 
 function getStaticFileContent(response, filepath, contentType){
