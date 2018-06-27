@@ -3,22 +3,16 @@ var fs = require('fs');
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
-var port = process.env.PORT || 8080;
+// var port = process.env.PORT || 8080;
 
 http.createServer(function(request, response){
 	var url = request.url;
 	switch(url) {
 		case '/':
-<<<<<<< HEAD
-			getStaticFileContent(response, 'home.html', 'text/html');
+			getStaticFileContent(response, 'public/home.html', 'text/html');
 			break;
 		case '/about':
-			getStaticFileContent(response, 'about.html', 'text/html');
-			break;
-		case '/contact':
-			getStaticFileContent(response, 'contact.html', 'text/html');
-=======
-			getStaticFileContent(response, 'public/home.html', 'text/html');
+			getStaticFileContent(response, 'public/about.html', 'text/html');
 			break;
 		case '/sessions':
 			getStaticFileContent(response, 'public/sessions.html', 'text/html');
@@ -43,19 +37,16 @@ http.createServer(function(request, response){
 			break;
 		case '/profile-edit':
 			getStaticFileContent(response, 'public/profile-edit.html', 'text/html');
->>>>>>> 8e78e29e844236cbda6171f8ee323392bdfe0a0e
 			break;
 		default:
 			response.writeHead(404, {'Content-Type':'text/plain'});
 			response.end('404 - Page not found.');
 
 	}
-<<<<<<< HEAD
-}).listen(port);
-=======
+
 }).listen(9099);
 console.log('server running at http://localhost:9099');
->>>>>>> 8e78e29e844236cbda6171f8ee323392bdfe0a0e
+
 
 
 function getStaticFileContent(response, filepath, contentType){
