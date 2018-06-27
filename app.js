@@ -7,11 +7,29 @@ http.createServer(function(request, response){
 		case '/':
 			getStaticFileContent(response, 'public/home.html', 'text/html');
 			break;
-		case '/about':
-			getStaticFileContent(response, 'public/about.html', 'text/html');
+		case '/sessions':
+			getStaticFileContent(response, 'public/sessions.html', 'text/html');
 			break;
-		case '/contact':
-			getStaticFileContent(response, 'public/contact.html', 'text/html');
+		case '/hits':
+			getStaticFileContent(response, 'public/hits.html', 'text/html');
+			break;
+		case '/questions':
+			getStaticFileContent(response, 'public/questions.html', 'text/html');
+			break;
+		case '/leaderboard':
+			getStaticFileContent(response, 'public/leaderboard.html', 'text/html');
+			break;
+		case '/suggestions':
+			getStaticFileContent(response, 'public/suggestions.html', 'text/html');
+			break;
+		case '/search':
+			getStaticFileContent(response, 'public/search.html', 'text/html');
+			break;
+		case '/profile':
+			getStaticFileContent(response, 'public/profile.html', 'text/html');
+			break;
+		case '/profile-edit':
+			getStaticFileContent(response, 'public/profile-edit.html', 'text/html');
 			break;
 		default:
 			response.writeHead(404, {'Content-Type':'text/plain'});
